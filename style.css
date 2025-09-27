@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+
+        @font-face{
+
+    font-family: 'android';
+    src: url('https://raw.githubusercontent.com/AssisJP06/machine/main/machine01/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-image: linear-gradient(45deg, #13ec5bcc,#20c055ba,#329653,#2b4132e1);
+            background-image: url('https://github.com/AssisJP06/machine/blob/main/machine01/unnamed.png?raw=true');
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            
+            
+        }
+        header{
+            background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.792), rgba(253, 253, 253, 0.248) );
+            text-align: center;
+            padding-top: 10px;
+
+        }
+        header > h1 {
+            font-family: 'android';
+            color: white;
+            padding-bottom: 35px;
+            font-size: 40px;
+    
+        }
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .calculadora{
+            width: 500px;
+            height: 500px;
+            border-radius: 5%;
+            margin: auto;
+            margin-top: 80px;
+            background-color:#556fc7d3 ;overflow: hidden;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.71);
+            border: 1px solid white;
+            margin-top: 0px;
+            padding: 13px;
+            
+        }
+        h3{
+            display: inline-block;
+            color: white;
+            font-size: 19px;
+        }
+        select{
+            padding: 5px;
+            cursor: pointer;
+        }
+        input{
+            padding: 5px;
+            
+        }
+        p{
+            color: white;
+            font-weight: bold;
+            
+        }
