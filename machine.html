@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversão de Bases</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/AssisJP06/machine/refs/heads/main/machine01/calculadora.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/AssisJP06/machine/refs/heads/main/calculadora.ico"
+        type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
@@ -18,7 +19,7 @@
         @font-face {
 
             font-family: 'android';
-            src: url('https://raw.githubusercontent.com/AssisJP06/machine/main/machine01/idroid.otf') format('opentype');
+            src: url('https://raw.githubusercontent.com/AssisJP06/machine/main/idroid.otf') format('opentype');
             font-weight: normal;
         }
 
@@ -28,7 +29,7 @@
             display: flex;
             flex-direction: column;
 
-            background-image: url('https://github.com/AssisJP06/machine/blob/main/machine01/unnamed.png?raw=true');
+            background-image: url('https://github.com/AssisJP06/machine/blob/main/unnamed.png?raw=true');
 
             background-color: #5570c752;
 
@@ -56,18 +57,20 @@
         }
 
         header>h1 {
+
             font-family: 'android';
             color: white;
             padding-bottom: 35px;
             font-weight: lighter;
             font-size: 50px;
+            letter-spacing: 1px;
 
         }
 
         #container {
 
             display: flex;
-            
+
             justify-content: space-evenly;
             width: 100%;
             height: 100%;
@@ -93,6 +96,42 @@
 
             box-shadow: 3px 5px 20px rgba(59, 88, 205, 0.536);
 
+        }
+
+        #T1,
+        #T2,
+        .caixa_button {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .primeiro {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        #base1 , #base2 {
+            margin-bottom: 7px;
+        }
+
+        .caixa_button {
+            display: flex;
+            flex-direction: row;
+        }
+        #meio{
+            padding: 10px 0px;
+        }
+
+        #T2 {
+            display: none;
         }
 
         h2 {
@@ -208,9 +247,10 @@
             font-weight: normal;
             font-family: Poppins, sans-serif;
             line-height: 1.5;
-            
+
         }
-        .primeiro{
+
+        .primeiro {
             margin-top: 0px;
         }
 
@@ -224,58 +264,63 @@
 
 
         }
-        #div_resposta div{
+
+        #div_resposta div {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        #div_resposta div:last-child{
+
+        #div_resposta div:last-child {
             border: none;
         }
 
-        #cor1{
+        #cor1 {
             border-bottom: 3px solid rgba(55, 239, 168, 0.601);
         }
-        #cor2{
+
+        #cor2 {
             border-bottom: 3px solid rgba(86, 23, 233, 0.634);
         }
-        #cor3{
-            border-bottom: 3px solid rgba(55, 239, 168, 0.601);}
+
+        #cor3 {
+            border-bottom: 3px solid rgba(55, 239, 168, 0.601);
+        }
 
         .ultimo {
             margin-bottom: 10px;
         }
+
         footer {
-            
+
             display: flex;
             flex-direction: column;
             align-items: center;
-            
-            
-            
+
+
+
 
             width: 100%;
-            
+
             position: relative;
             bottom: -50px;
 
-            padding: 13px 0; 
+            padding: 13px 0;
             background-color: #0e1937f4;
-            color: #fff; 
-            font-family: 'Poppins', sans-serif; 
-            font-size: 12px; 
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
             border-top: 1px solid #1a1a1a;
             margin-top: 50px;
-            
-            
-}
 
-footer p {
-    margin: 3px 0px; 
-    
-}
 
+        }
+
+        footer p {
+            margin: 3px 0px;
+
+        }
     </style>
 
 </head>
@@ -288,38 +333,100 @@ footer p {
     </header>
     <div id="container">
         <div class="calculadora">
-            <h2>Calculadora De Base</h2>
-            <h3>Escolha a base de conversão</h3>
-            <select id="numerico">
-                <option value="0" selected disabled class="op0">Selecione a opção</option>
-                <option value="1">Octal</option>
-                <option value="2">Binário</option>
-                <option value="3">Hexadecimal</option>
-                <option value="4">Decimal</option>
-            </select>
-            <label for="input_n">Digite um número / letra</label>
-            <input type="text" id="input_n" placeholder="Insira o número">
+            <div id="T2">
+                <h2>Calculadora De Base</h2>
 
-            <button onclick="calcular()">Calcular</button>
+
+                <label for="input_n1">Digite o primeiro número</label>
+                <div class="primeiro">
+                    <input type="number" id="input_n1" placeholder="Insira o número">
+                    <select id="base1">
+                        <option value="0" selected disabled class="op0">Base</option>
+                        <option value="1">Octal</option>
+                        <option value="2">Binário</option>
+                        <option value="3">Hexadecimal</option>
+                        <option value="4">Decimal</option>
+                    </select>
+                </div>
+
+
+                <label for="input_n2" id="meio">Digite o segundo número</label>
+                <div class="primeiro">
+                    <input type="number" id="input_n2" placeholder="Insira o número">
+                    <select id="base2">
+                        <option value="0" selected disabled class="op0">Base</option>
+                        <option value="1">Octal</option>
+                        <option value="2">Binário</option>
+                        <option value="3">Hexadecimal</option>
+                        <option value="4">Decimal</option>
+                    </select>
+                </div>
+                <label for="operacao">Operações disponiveis</label>
+                <select style="margin-top: 10px;" id="operacao">
+                    <option value="#">Operações</option>
+                    <option value="soma">+</option>
+                    <option value="subtracao">-</option>
+                    <option value="divisao">/</option>
+                    <option value="multiplicacao">x</option>
+                </select>
+
+            </div>
+            <div id="T1">
+                <h2>Converter Bases</h2>
+                <h3>Escolha a base de conversão</h3>
+                <select id="numerico">
+                    <option value="0" selected disabled class="op0">Selecione a opção</option>
+                    <option value="1">Octal</option>
+                    <option value="2">Binário</option>
+                    <option value="3">Hexadecimal</option>
+                    <option value="4">Decimal</option>
+                </select>
+                <label for="input_n">Digite um número / letra</label>
+                <input type="text" id="input_n" placeholder="Insira o número">
+            </div>
+
+            <div class="caixa_button">
+                <button id="botao1" onclick="converter()">Converter</button>
+                <button  id="botao2" onclick="calcular()">Quero Calcular</button>
+            </div>
 
 
         </div>
         <div id="div_resposta">
 
         </div>
-        
+
 
     </div>
-    <footer>
-    <p>&copy; 2025 SPTECHER'S MACHINE. Todos os direitos reservados.</p>
-    <p>Desenvolvido por João Pedro Assis</p>
-</footer>
+    <footer id="pe">
+        <p>&copy; 2025 SPTECHER'S MACHINE. Todos os direitos reservados.</p>
+        <p>Desenvolvido por João Pedro Assis</p>
+    </footer>
 </body>
 
 </html>
 <script>
-    function calcular() {
 
+function alternarBotao(){
+     var mudar1 = botao1.textContent; 
+    var mudar2 = botao2.textContent;
+
+    if(mudar2 === 'Quero Calcular'){
+            botao2.textContent = 'Calcular';
+            botao1.textContent = 'Quero Converter'
+        }
+        if(mudar1 == 'Quero Converter'){
+            botao1.textContent = 'Converter';
+            botao2.textContent = 'Quero Calcular'
+        }
+
+}
+    function converter() {
+
+        alternarBotao();
+
+        T2.style.display = 'none';
+        T1.style.display = 'flex';
         var base = numerico.value;
         var numero = input_n.value.trim();
 
@@ -369,10 +476,15 @@ footer p {
             numero = parseInt(numero, 2);
         }
         if (base != '2' && base != '3' && base != '4' && base != '1') {
+            
+
+            if(base == '0'){
+            alert('Bem-vindo a Machine JP');
+            
             alert('Escolha uma base');
             div_resposta.style.display = 'none';
-            return;
         }
+        
 
         else {
 
@@ -403,27 +515,124 @@ footer p {
             binario.style.display = 'none'; hexadecimal.style.display = 'none';
 
 
-
-
-            if (base != 'Decimal') {
-                decimal.style.display = 'flex';
-
-
-            }
-
-            if (base != 'Octal') {
-                octal.style.display = 'flex';
-            }
-
-            if (base != 'Hexadecimal') {
-                hexadecimal.style.display = 'flex';
-            }
-
-            if (base != 'Binário') {
-                binario.style.display = 'flex';
-            }
-
         }
 
+        }}
+    
+        function calcular() {
+            alternarBotao();
+    // Esconder a primeira aba e mostrar a segunda
+    T1.style.display = 'none';
+    T2.style.display = 'flex';
+    div_resposta.style.display = 'flex';
+
+    var mudar1 = botao1.textContent; 
+    var mudar2 = botao2.textContent;
+
+    if(mudar2 === 'Quero Calcular'){
+            botao2.textContent = 'Calcular';
+            botao1.textContent = 'Quero Converter'
+        }
+
+
+    // 1. Obter os elementos do HTML
+    const input_n1 = document.getElementById('input_n1');
+    const input_n2 = document.getElementById('input_n2');
+    const base1 = document.getElementById('base1');
+    const base2 = document.getElementById('base2');
+    const operacao = document.getElementById('operacao');
+
+    // 2. Obter os valores dos elementos
+    const num1 = input_n1.value.trim();
+    const base1Value = base1.value;
+    const num2 = input_n2.value.trim();
+    const base2Value = base2.value;
+    const operacaoValue = operacao.value;
+
+    // 3. Validação dos dados de entrada
+    if (!num1 || base1Value === "0" || !num2 || base2Value === "0" || operacaoValue === "#") {
+        alert("Preencha todos os campos corretamente!");
+        div_resposta.style.display = 'none';
+        return;
     }
+
+    // 4. Conversão para decimal
+    let valor1Decimal;
+    let valor2Decimal;
+    
+    try {
+        if (base1Value === "1") { valor1Decimal = parseInt(num1, 8); }
+        else if (base1Value === "2") { valor1Decimal = parseInt(num1, 2); }
+        else if (base1Value === "3") { valor1Decimal = parseInt(num1, 16); }
+        else if (base1Value === "4") { valor1Decimal = parseInt(num1, 10); }
+
+        if (base2Value === "1") { valor2Decimal = parseInt(num2, 8); }
+        else if (base2Value === "2") { valor2Decimal = parseInt(num2, 2); }
+        else if (base2Value === "3") { valor2Decimal = parseInt(num2, 16); }
+        else if (base2Value === "4") { valor2Decimal = parseInt(num2, 10); }
+    } catch (e) {
+        alert("Erro na conversão. Verifique se os números são válidos para as bases selecionadas.");
+        div_resposta.style.display = 'none';
+        return;
+    }
+
+    // 5. Execução da operação com base no valor do select
+    let resultadoDecimal;
+    switch (operacaoValue) {
+        case "soma":
+            resultadoDecimal = valor1Decimal + valor2Decimal;
+            break;
+        case "subtracao":
+            resultadoDecimal = valor1Decimal - valor2Decimal;
+            break;
+        case "multiplicacao":
+            resultadoDecimal = valor1Decimal * valor2Decimal;
+            break;
+        case "divisao":
+            if (valor2Decimal === 0) {
+                alert("Não é possível dividir por zero!");
+                div_resposta.style.display = 'none';
+                return;
+            }
+            resultadoDecimal = valor1Decimal / valor2Decimal;
+            break;
+        default:
+             alert("Operação inválida. Selecione uma das opções.");
+             div_resposta.style.display = 'none';
+             return;
+    }
+    
+    if (isNaN(resultadoDecimal)) {
+      alert("Erro na operação. Verifique se os números de entrada são válidos.");
+      div_resposta.style.display = 'none';
+      return;
+    }
+
+    // 6. Conversão do resultado para outras bases
+    const resultadoOctal = Math.floor(resultadoDecimal).toString(8);
+    const resultadoBinario = Math.floor(resultadoDecimal).toString(2);
+    const resultadoHexa = Math.floor(resultadoDecimal).toString(16).toUpperCase();
+
+    // 7. Exibição do resultado na tela
+    div_resposta.innerHTML = `
+        <h2>Resultado</h2>
+        <div id="cor1">
+            <p>Decimal</p> <span>${resultadoDecimal}</span>
+        </div>
+        <div id="cor2">
+            <p>Hexadecimal</p> <span>${resultadoHexa}</span>
+        </div>
+        <div id="cor3">
+            <p>Binário</p> <span>${resultadoBinario}</span>
+        </div>
+        <div id="cor4">
+            <p>Octal</p> <span class="ultimo">${resultadoOctal}</span>
+        </div>
+    `;
+
+    document.querySelectorAll('#div_resposta p').forEach(p => p.style.display = 'block');
+    document.querySelectorAll('#div_resposta span').forEach(span => span.style.display = 'block');
+}
+
+
 </script>
